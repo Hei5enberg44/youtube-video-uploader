@@ -84,7 +84,7 @@
     
                 console.log('https://www.youtube.com/watch?v=' + videoId)
             } catch(error) {
-                console.log(error.code)
+                console.log({ code: error.code, reason: error.errors[0].reason, message: error.errors[0].message })
             }
         }
 
