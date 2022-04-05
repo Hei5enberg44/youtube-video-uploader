@@ -22,7 +22,7 @@
     google.options({ auth: oauth2Client })
 
     let error = false
-    let filepath, title, description, status, playlists
+    let filepath, title, description, status, forKids, playlists
     if(!argv.filepath) {
         error = true
         console.log('Please specify a file path with --filepath')
@@ -42,6 +42,7 @@
     }
     description = argv.description ?? ''
     status = !['public', 'private', 'unlisted'].find(s => s === argv.status) ? 'private' : argv.status
+    forKids = !['yes', 'no'].find(s => s === argv.forKids) ? false : (argv.forKids === 'yes' ? true : false)
     playlists = argv.playlists ? argv.playlists.split(',').map(p => p.trim()) : []
 
     if(!error) {
@@ -60,7 +61,8 @@
                                 description: description
                             },
                             status: {
-                                privacyStatus: status
+                                privacyStatus: status,
+                                madeForKids: forKids
                             }
                         },
                         media: {
