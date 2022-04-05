@@ -1,0 +1,15 @@
+{
+  "name": "youtube-video-uploader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hei5enberg",
+  "license": "ISC",
+  "dependencies": {
+    "googleapis": "^100.0.0",
+    "yargs": "^17.4.0"
+  }
+}
